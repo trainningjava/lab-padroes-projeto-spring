@@ -12,7 +12,13 @@ public class Cliente {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+
+	@Schema( 
+		description = "Nome do cliente", 
+		example = "João Silva" 
+	)
 	private String nome;
+	
 	@ManyToOne
 	private Endereco endereco;
 
