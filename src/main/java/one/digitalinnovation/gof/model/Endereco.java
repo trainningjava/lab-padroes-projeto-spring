@@ -16,16 +16,66 @@ import javax.persistence.Id;
 public class Endereco {
 
 	@Id
-	private String cep;
-	private String logradouro;
-	private String complemento;
-	private String bairro;
-	private String localidade;
-	private String uf;
-	private String ibge;
-	private String gia;
-	private String ddd;
-	private String siafi;
+	@Schema(
+		description = "Código de Endereçamento Postal (somente números)", 
+		example = "01001000"
+	)
+    private String cep;
+
+    @Schema(
+		description = "Nome do arruamento (rua, avenida, praça, etc.)", 
+		example = "Praça da Sé"
+	)
+    private String logradouro;
+
+    @Schema(
+		description = "Dados adicionais para localização (apto, bloco, fundos, etc.)", 
+		example = "lado ímpar"
+	)
+    private String complemento;
+
+    @Schema(
+		description = "Nome do bairro correspondente", 
+		example = "Sé"
+	)
+    private String bairro;
+
+    @Schema(
+		description = "Nome da cidade ou município", 
+		example = "São Paulo"
+	)
+    private String localidade;
+
+    @Schema(
+		description = "Sigla do Estado (Unidade da Federação)", 
+		example = "SP"
+	)
+    private String uf;
+
+    @Schema(
+		description = "Código identificador do município no IBGE", 
+		example = "3550308"
+	)
+    private String ibge;
+
+    @Schema(
+		description = "Guia de Informação e Apuração do ICMS (Retornado apenas para SP)", 
+		example = "1004", 
+		nullable = true
+	)
+    private String gia;
+
+    @Schema(
+		description = "Código DDD de telefone da região", 
+		example = "11"
+	)
+    private String ddd;
+
+    @Schema(
+		description = "Código identificador do município no Sistema SIAFI do Governo Federal", 
+		example = "7107"
+	)
+    private String siafi;
 
 	public String getCep() {
 		return cep;
