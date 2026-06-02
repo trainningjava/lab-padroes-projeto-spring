@@ -39,6 +39,7 @@ src/main/java
     ├── model
     │   ├── Cliente.java
     │   ├── Endereco.java
+    ├── repository    
     │   ├── ClienteRepository.java
     │   └── EnderecoRepository.java
     ├── service
